@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="CHIKHI Walid et al." />
+
+
+<title>HARP AT METEO-ALGERIA</title>
+
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">WikiPage</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown-header">content</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">HARP AT METEO-ALGERIA</h1>
+<h4 class="author">CHIKHI Walid et al.</h4>
+<h4 class="date">Avril 2022</h4>
+
+</div>
+
+
+<div id="présentation-harp" class="section level2">
+<h2>Présentation Harp</h2>
+<p>HARP est un outil pour lire, traiter et comparer les données de télédétection par satellite, les données de modèle, les données in situ et les données de télédétection au sol. Cet outil est composé de :</p>
+<ul>
+<li>Un ensemble d’outils de ligne de commande</li>
+<li>Une bibliothèque de fonctions d’analyse</li>
+</ul>
+<p>Harp en considération plusieurs formats de données : (NetCDF - HDF5 - FA - LFI - GRIB) et peut étre manipulé en utilisant R , Python - Matlab - IDL ou des lignes de commandes UNIX¨.</p>
+<p>Ce document présente un guide pour débutant harp afin de l’installer et l’utiliser sur Rstudio.</p>
+</div>
+<div id="installation-harp-sur-r" class="section level2">
+<h2>Installation harp sur R</h2>
+<p>le package Harp n’est pas disponible sur le repertoire CRAN du Langage R, Pour cela une installation directe du github sera menée.avant d’entamer l’installation nous devons dabord installer les prérequis :</p>
+<pre class="r"><code>#install.packages(&quot;devtools&quot;)
+#install.packages(&quot;tydiverse&quot;)
+#install.packages(&quot;tinytex&quot;)</code></pre>
+<p>Maintenant procédons a l’installation du package harp Basic (ne prend pas en considération les formats LFI et FA ) ^ :</p>
+<pre class="r"><code># Installation de HARP 
+
+#library(devtools)
+#install_github(&quot;harphub/harp&quot;, force = TRUE)</code></pre>
+<p>Si l’installation du package a été effectué avec succés un message de ce genre sera affiché sur la console de Rstudio :</p>
+<hr />
+<hr />
+<p>Afin d’utiliser un package sur R , nous devons tous dabord le charger sur notre environnement de travail. la fonction <strong>library()</strong> de R permets de faire cela:</p>
+<pre class="r"><code># library(tinytex)
+# library(harp)</code></pre>
+</div>
+<div id="comment-travailler-avec-les-formats-lfi-et-fa" class="section level2">
+<h2>Comment Travailler avec les formats LFI et FA</h2>
+<p>Bien que les sorties des modéles opérationels utilisés au sein de Météo-Algérie soient du format “LFI” et “FA” ou plus couramment nommée par le services de la PNT “Fullpos” et “ICMSH”, le package de base harp ne prend ces deux format en compte, et pour de raisons de confidentialité le code source du package <em>“Rfa”</em> pour la manipulation de ces 2 formats n’est pas publiquement publié jusqu’a présent sur le git.pour se procurer le package Rfa , vous devriez contacter Monsieur <strong><em>Alex</em> <em>Deckmyn</em></strong> &lt; <em><a href="mailto:alex.deckmyn@meteo.be" class="email">alex.deckmyn@meteo.be</a></em> &gt; du l’institut Royal de Météorologie (IRM)</p>
+</div>
+<div id="guide-dutilisation" class="section level2">
+<h2><em>Guide d’utilisation</em></h2>
+<p>Ce chapitre est en cours d’exploration.</p>
+<div id="exemple" class="section level4">
+<h4><em>Exemple</em></h4>
+<p>Voici un petit exemple pour la manipulation d’un fichier FA</p>
+<pre class="r"><code>library(Rfa)
+library(harp)
+
+# Lire un champ a partir d&#39;un ICMSH et l&#39;attribuer a un variable. 
+
+t2m=Rfa::FAdec(&quot;/home/wchikhi/Dropbox/Harp/PFAL03ALGE01+0000&quot;,&quot;SURFTEMPERATURE&quot;)
+plot_field(t2m)</code></pre>
+<pre><code>## Nothing to project!
+## Nothing to project!
+## Nothing to project!
+## Nothing to project!
+## Nothing to project!
+## Nothing to project!</code></pre>
+<p><img src="harp_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre><code>## Nothing to project!
+## Nothing to project!
+## Nothing to project!
+## Nothing to project!
+## Nothing to project!
+## Nothing to project!
+## Nothing to project!
+## Nothing to project!
+## Nothing to project!
+## Nothing to project!
+## Nothing to project!
+## Nothing to project!
+## Nothing to project!</code></pre>
+</div>
+</div>
+<div id="lire-une-prévision-avec-harp" class="section level2">
+<h2>Lire une prévision avec Harp</h2>
+<p>L’utilitaire harp offre une varieté de fonctions qui permettent de lire les sorties des modéles ( NetcDF,GRIB ,FA, LFI) ,ce guide présente un simple exemlple de la lecture des format " <strong><em>LFI</em></strong> " et " <strong><em>FA</em></strong> " a l’aide de la fonction <strong><em>read_forecast()</em></strong></p>
+<pre class="r"><code>library(Rfa)
+library(harp)
+
+#_INITITAION DES ARGUMENTS___ 
+# POUR VOIR TOUT LES ARGUMENTS ET LEURS VALEURS PAR DÉFAUT ATTRIBUÉES . VEUILLEZ VOIR LE VOLET &quot;Help&quot; 
+
+
+start=20220101          # ! sous format {YYYY}{MM}{DD}{HH} : {HH} :peut etre omis
+end = 20220102
+leadtime= seq(0,24,6)   ## lead time = nombre d&#39;échéeance Ex AROME-OPER -&gt; leatime=seq(0,48,6) or 48 echeances avec un pas de 3h 
+
+template=&quot;{DD}/PFAL03ALGE01+00{LDT2}&quot; #! LDT2 = represente le leadtime dans Harp; 2 = en 2 chiffres;  
+path=&quot;/home/wchikhi/LIMA/Harp-scores/FULLPOS/Harp/AROME/AROME_CY46&quot;
+
+##_affichages des parametres prédéfinis dans Harp__####
+
+show_harp_parameters()</code></pre>
+<pre><code>## # A tibble: 21 × 2
+##    harp_parameter_name description                                              
+##    &lt;chr&gt;               &lt;chr&gt;                                                    
+##  1 AccPcp12h           Accumulated precipitation over e.g. 12 hours             
+##  2 Cbase               Height of cloud base                                     
+##  3 CChigh              High level cloud cover                                   
+##  4 CClow               Low level cloud cover                                    
+##  5 CCmed               Medium level cloud cover                                 
+##  6 CCtot               Total cloud cover                                        
+##  7 D10m                10m wind direction                                       
+##  8 G10m                10m wind gust - period depends on input data             
+##  9 Gmax                10m maximum wind gust - period depends on input data     
+## 10 Pcp                 Precipitation direct from model - usually accumulated fr…
+## 11 Pmsl                Pressure at mean sea level                               
+## 12 Ps                  Pressure at surface                                      
+## 13 Q2m                 2m specific humidity                                     
+## 14 RH2m                2m relative humidity                                     
+## 15 S10m                10m wind speed                                           
+## 16 Smax                Maximum 10m wind speed - period depends on input data    
+## 17 T2m                 2m temperature                                           
+## 18 Td2m                2m dewpoint temperature                                  
+## 19 Tmax                Maximum 2m temperature                                   
+## 20 Tmin                Minimum 2m temperature                                   
+## 21 vis                 Horizontal visibility                                    
+## 
+##  For upper air parameters, Z, T, RH, D, S, Q, and Td are available. Follow the
+##  letter with a number to denote pressure level, e.g. T850, S925, Z300 etc.</code></pre>
+<pre class="r"><code>#_ CHOISIR UN PARAMETRE DE LA LISTE OU DÉFINIR UN NOUVEAU A L&#39;AIDE DE LA FONCTION : as_harp_parameter() 
+parametre=&quot;T2m&quot;</code></pre>
+<pre class="r"><code>#__LECTURE DES FULPOSS___
+
+forecast=read_forecast(start_date = start,
+              end_date = end,
+              fcst_model = &quot;AROME&quot;,  # Peut etre omis 
+              parameter = parametre,
+              lead_time = leadtime,
+              by=&quot;1d&quot;,     #  Forecast run, ( Réseaux), by=&quot;1d&quot; Pour dire 1 réseau chaque minuit, 
+              file_path = path,
+              file_template = template,
+              file_format = &quot;fa&quot;,
+              stop_on_fail =  T,
+              return_data = T , # a utiliser avec précautions , consomme beaucoup de mémorire RAM.
+              )</code></pre>
+<pre><code>## Reading /home/wchikhi/LIMA/Harp-scores/FULLPOS/Harp/AROME/AROME_CY46/01/PFAL03ALGE01+0000</code></pre>
+<pre><code>## Reading /home/wchikhi/LIMA/Harp-scores/FULLPOS/Harp/AROME/AROME_CY46/01/PFAL03ALGE01+0006</code></pre>
+<pre><code>## Reading /home/wchikhi/LIMA/Harp-scores/FULLPOS/Harp/AROME/AROME_CY46/01/PFAL03ALGE01+0012</code></pre>
+<pre><code>## Reading /home/wchikhi/LIMA/Harp-scores/FULLPOS/Harp/AROME/AROME_CY46/01/PFAL03ALGE01+0018</code></pre>
+<pre><code>## Reading /home/wchikhi/LIMA/Harp-scores/FULLPOS/Harp/AROME/AROME_CY46/01/PFAL03ALGE01+0024</code></pre>
+<pre><code>## Reading /home/wchikhi/LIMA/Harp-scores/FULLPOS/Harp/AROME/AROME_CY46/02/PFAL03ALGE01+0000</code></pre>
+<pre><code>## Reading /home/wchikhi/LIMA/Harp-scores/FULLPOS/Harp/AROME/AROME_CY46/02/PFAL03ALGE01+0006</code></pre>
+<pre><code>## Reading /home/wchikhi/LIMA/Harp-scores/FULLPOS/Harp/AROME/AROME_CY46/02/PFAL03ALGE01+0012</code></pre>
+<pre><code>## Reading /home/wchikhi/LIMA/Harp-scores/FULLPOS/Harp/AROME/AROME_CY46/02/PFAL03ALGE01+0018</code></pre>
+<pre><code>## Reading /home/wchikhi/LIMA/Harp-scores/FULLPOS/Harp/AROME/AROME_CY46/02/PFAL03ALGE01+0024</code></pre>
+<pre class="r"><code>forecast %&gt;% print(n=Inf)</code></pre>
+<pre><code>## • AROME
+## # A tibble: 10 × 9
+##    fcdate              lead_time parameter validdate           level_type level
+##    &lt;dttm&gt;                  &lt;dbl&gt; &lt;chr&gt;     &lt;dttm&gt;              &lt;chr&gt;      &lt;dbl&gt;
+##  1 2022-01-01 00:00:00         0 T2m       2022-01-01 00:00:00 height         2
+##  2 2022-01-01 00:00:00         6 T2m       2022-01-01 06:00:00 height         2
+##  3 2022-01-01 00:00:00        12 T2m       2022-01-01 12:00:00 height         2
+##  4 2022-01-01 00:00:00        18 T2m       2022-01-01 18:00:00 height         2
+##  5 2022-01-01 00:00:00        24 T2m       2022-01-02 00:00:00 height         2
+##  6 2022-01-02 00:00:00         0 T2m       2022-01-02 00:00:00 height         2
+##  7 2022-01-02 00:00:00         6 T2m       2022-01-02 06:00:00 height         2
+##  8 2022-01-02 00:00:00        12 T2m       2022-01-02 12:00:00 height         2
+##  9 2022-01-02 00:00:00        18 T2m       2022-01-02 18:00:00 height         2
+## 10 2022-01-02 00:00:00        24 T2m       2022-01-03 00:00:00 height         2
+## # … with 3 more variables: units &lt;chr&gt;, fcst_cycle &lt;chr&gt;, AROME_det &lt;geolist&gt;</code></pre>
+<p>Aprés avoir lu et importer les données sur l’environnement de R, des traitements usuels peuvent etres appliqués et ces données peuvent etre traité a l’aide des fonction R de Base ou a l’aide du <em>package</em> ( <strong><em>dplyr</em></strong> )</p>
+<pre><code>  To be continued
+
+
+
+            Under Construction .... </code></pre>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

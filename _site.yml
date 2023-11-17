@@ -1,0 +1,16 @@
+name: "PNT Wiki"
+navbar:
+  title: "PNT Wiki"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Harp"
+      href: harp.html
+    - text: "Assimilation"
+      href: assimilation.html 
+    - text: "Controle"
+      href: controle.html
+    - text: "Commandes R"
+      href: Commandes_R.html
+      
+output_dir: "docs"

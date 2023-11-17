@@ -1,0 +1,152 @@
+---
+title: "HARP AT METEO-ALGERIA"
+author: ' CHIKHI Walid et al.'
+date: ' Avril 2022'
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    df_print: paged
+    pdf_document: default
+    theme: united
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Présentation Harp 
+HARP est un outil pour lire, traiter et comparer les données de télédétection par satellite, les données de modèle, les données in situ  et les données de télédétection au sol. Cet outil est composé de :
+
+  - Un ensemble d'outils de ligne de commande
+  - Une bibliothèque de fonctions d'analyse
+
+Harp en considération plusieurs formats de données : (NetCDF - HDF5 - FA - LFI - GRIB) et peut étre manipulé en utilisant R , Python - Matlab - IDL ou des lignes de commandes UNIX¨.
+
+Ce document présente un guide pour débutant harp afin de l'installer et l'utiliser sur Rstudio.  
+
+## Installation harp sur R 
+le package Harp n'est pas disponible sur le repertoire CRAN du Langage R, Pour cela une installation directe du github sera menée.avant d'entamer l'installation nous devons dabord installer les prérequis : 
+
+```{r, class="grey"}
+#install.packages("devtools")
+#install.packages("tydiverse")
+#install.packages("tinytex")
+```
+
+Maintenant procédons a l'installation du package harp Basic (ne prend pas en considération les formats LFI et FA ) ^ : 
+
+```{r eval=FALSE, include=TRUE  }
+# Installation de HARP 
+
+#library(devtools)
+#install_github("harphub/harp", force = TRUE)
+
+```
+
+Si l'installation du package a été effectué avec succés un message de ce genre sera affiché sur la console de Rstudio :  
+
+-----------------------------
+```{r echo=FALSE}
+library(devtools)
+#install_github("harphub/harp", force = TRUE)
+```
+-----------------------------
+
+Afin d'utiliser un package sur R , nous devons tous dabord le charger sur notre environnement de travail. la fonction **library()** de R permets de faire cela:  
+
+```{r}
+
+# library(tinytex)
+# library(harp)
+
+```
+
+## Comment Travailler avec les formats LFI et FA 
+ 
+Bien que les sorties des modéles opérationels utilisés au sein de Météo-Algérie soient du format "LFI" et "FA" ou plus couramment nommée par le services de la PNT "Fullpos" et "ICMSH", le package de base harp ne prend ces deux format en compte, et pour de raisons de confidentialité le code source du package _"Rfa"_ pour la manipulation de ces 2 formats n'est pas publiquement publié jusqu'a présent sur le git.pour se procurer le package Rfa , vous devriez contacter Monsieur **_Alex_ _Deckmyn_** < _alex.deckmyn@meteo.be_ > du l'institut Royal de Météorologie (IRM)           
+
+
+## *Guide d'utilisation* 
+
+Ce chapitre est en cours d'exploration.
+
+#### _Exemple_
+
+Voici un petit exemple pour la manipulation d'un fichier FA
+
+```{r}
+library(Rfa)
+library(harp)
+
+# Lire un champ a partir d'un ICMSH et l'attribuer a un variable. 
+
+t2m=Rfa::FAdec("/home/wchikhi/Dropbox/Harp/PFAL03ALGE01+0000","SURFTEMPERATURE")
+plot_field(t2m)
+```
+
+
+## Lire une prévision avec Harp  
+
+L'utilitaire harp offre une varieté de fonctions qui permettent de lire les sorties des modéles ( NetcDF,GRIB ,FA, LFI) ,ce guide présente un simple exemlple de la lecture des format " **_LFI_** "  et   " **_FA_** " a l'aide de la fonction **_read_forecast()_** 
+
+```{r}
+library(Rfa)
+library(harp)
+
+#_INITITAION DES ARGUMENTS___ 
+# POUR VOIR TOUT LES ARGUMENTS ET LEURS VALEURS PAR DÉFAUT ATTRIBUÉES . VEUILLEZ VOIR LE VOLET "Help" 
+
+
+start=20220101          # ! sous format {YYYY}{MM}{DD}{HH} : {HH} :peut etre omis
+end = 20220102
+leadtime= seq(0,24,6)   ## lead time = nombre d'échéeance Ex AROME-OPER -> leatime=seq(0,48,6) or 48 echeances avec un pas de 3h 
+
+template="{DD}/PFAL03ALGE01+00{LDT2}" #! LDT2 = represente le leadtime dans Harp; 2 = en 2 chiffres;  
+path="/home/wchikhi/LIMA/Harp-scores/FULLPOS/Harp/AROME/AROME_CY46"
+
+##_affichages des parametres prédéfinis dans Harp__####
+
+show_harp_parameters()
+
+#_ CHOISIR UN PARAMETRE DE LA LISTE OU DÉFINIR UN NOUVEAU A L'AIDE DE LA FONCTION : as_harp_parameter() 
+parametre="T2m"
+
+```
+
+```{r echo=TRUE, results='hide'}
+#__LECTURE DES FULPOSS___
+
+forecast=read_forecast(start_date = start,
+              end_date = end,
+              fcst_model = "AROME",  # Peut etre omis 
+              parameter = parametre,
+              lead_time = leadtime,
+              by="1d",     #  Forecast run, ( Réseaux), by="1d" Pour dire 1 réseau chaque minuit, 
+              file_path = path,
+              file_template = template,
+              file_format = "fa",
+              stop_on_fail =  T,
+              return_data = T , # a utiliser avec précautions , consomme beaucoup de mémorire RAM.
+              )
+```
+
+```{r}
+
+forecast %>% print(n=Inf)
+
+```
+Aprés avoir lu et importer les données sur l'environnement de R, des traitements usuels peuvent etres appliqués et ces données peuvent etre traité a l'aide des fonction R de Base ou a l'aide du _package_ (  **_dplyr_** )   
+
+
+
+      To be continued
+
+
+
+                Under Construction .... 
+
+
+
+

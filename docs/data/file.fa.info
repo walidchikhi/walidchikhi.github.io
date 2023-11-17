@@ -1,0 +1,159 @@
+### FORMAT: FA
+
+### IDENTIFIER (CDIDEN): ALD                                                                             
+
+################
+### VALIDITY ###
+################
+Validity                                          : 2023-05-01 00:00:00
+Basis                                             : 2023-05-01 00:00:00
+Term                                              :             0:00:00
+Duration for cumulative quantities                :             0:00:00
+Statistical process                               :                None
+(GRIB2 code -- table 4.10)                        :                None
+-----------------------------------------------------------------------
+
+Kind of producting process                        :      initialization
+###########################
+### HORIZONTAL GEOMETRY ###
+###########################
+Rectangular grid ( = LAM or reg. Lon/Lat)         :                True
+Zone                                              :                 CIE
+Total points in X                                 :                 500
+Total points in Y                                 :                 500
+Points of C+I in X                                :                 489
+Points of C+I in Y                                :                 489
+Low-left X offset for I zone                      :                   0
+Low-left Y offset for I zone                      :                   0
+Width of I strip in X                             :                   8
+Width of I strip in Y                             :                   8
+Truncation in X                                   :                 249
+Truncation in Y                                   :                 249
+-----------------------------------------------------------------------
+Kind of projection                                :Lambert (conformal conic)
+Sinus of Reference Latitude                       :  0.5591929034707468
+Reference Latitude in deg (ELAT0)                 :                34.0
+Reference Longitude in deg (ELON0)                :                 3.0
+Angle of rotation in deg                          :                 0.0
+Center Longitude (of C+I) in deg (ELONC)          :                 3.0
+Center Latitude (of C+I) in deg (ELATC)           :                34.0
+Resolution in X, in metres (EDELX)                :              3000.0
+Resolution in Y, in metres (EDELY)                :              3000.0
+Domain width (of C+I) in X, in metres (ELX)       :           1464000.0
+Domain width (of C+I) in Y, in metres (ELY)       :           1464000.0
+Max Longitude (of C+I) in deg                     :  11.587153242428519
+Min Longitude (of C+I) in deg                     :  -5.587153242428519
+Max Latitude (of C+I) in deg                      :   40.56807042597545
+Min Latitude (of C+I) in deg                      :   27.19652099243491
+Low-Left corner (of C+I) Longitude in deg         :  -4.356542502596763
+Low-Left corner (of C+I) Latitude in deg          :   27.19652099243491
+Low-Right corner (of C+I) Longitude in deg        :  10.356542502596763
+Low-Right corner (of C+I) Latitude in deg         :   27.19652099243491
+Upper-Left corner (of C+I) Longitude in deg       :  -5.587153242428519
+Upper-Left corner (of C+I) Latitude in deg        :   40.29384518240527
+Upper-Right corner (of C+I) Longitude in deg      :  11.587153242428519
+Upper-Right corner (of C+I) Latitude in deg       :   40.29384518240527
+-----------------------------------------------------------------------
+
+#########################
+### VERTICAL GEOMETRY ###
+#########################
+Number of vertical levels                         :                  41
+Type of first fixed surface                       :                 119
+Hybrid-pressure coord. A coefficients
+                                                 1:                 0.0
+                                                 2:          271.828156
+                                                 3:          516.473511
+                                                 4:          734.981567
+                                                 5:          928.397766
+                                                 6:           1097.7677
+                                                 7:         1244.136719
+                                                 8:         1368.550293
+                                                 9:         1472.054077
+                                                10:         1555.693481
+                                                11:  1620.5141600000002
+                                                12:         1667.561401
+                                                13:  1697.8807369999997
+                                                14:  1712.5175780000002
+                                                15:         1712.517456
+                                                16:         1698.926147
+                                                17:         1672.788818
+                                                18:         1635.151123
+                                                19:  1587.0583500000002
+                                                20:         1529.556152
+                                                21:         1463.690186
+                                                22:         1390.505737
+                                                23:         1311.048096
+                                                24:         1226.363403
+                                                25:          1137.49646
+                                                26:         1045.493042
+                                                27:   951.3986819999999
+                                                28:          856.258728
+                                                29:          761.118896
+                                                30:          667.024536
+                                                31:          575.021118
+                                                32:          486.154266
+                                                33:  401.46935999999994
+                                                34:          322.011841
+                                                35:          248.827347
+                                                36:          182.961258
+                                                37:  125.45916000000001
+                                                38:           77.366501
+                                                39:           39.728729
+                                                40:  13.591413000000001
+                                                41:                 0.0
+                                                42:                 0.0
+-----------------------------------------------------------------------
+Hybrid-pressure coord. B coefficients
+                                                 1:                 0.0
+                                                 2:                 0.0
+                                                 3:        0.0034566391
+                                                 4:        0.0101978322
+                                                 5:        0.0200514905
+                                                 6:        0.0328455307
+                                                 7:        0.0484078601
+                                                 8:        0.0665664002
+                                                 9:        0.0871490464
+                                                10:        0.1099837348
+                                                11:        0.1348983943
+                                                12:        0.1617208868
+                                                13:         0.190279156
+                                                14:        0.2204010785
+                                                15:        0.2519146502
+                                                16:        0.2846477032
+                                                17:        0.3184281588
+                                                18:        0.3530840278
+                                                19:        0.3884431124
+                                                20:        0.4243333638
+                                                21:        0.4605826735
+                                                22:        0.4970190227
+                                                23:         0.533470273
+                                                24:        0.5697643161
+                                                25:        0.6057290435
+                                                26:        0.6411924958
+                                                27:        0.6759824157
+                                                28:        0.7099269032
+                                                29:        0.7428537607
+                                                30:        0.7745908499
+                                                31:        0.8049662113
+                                                32:        0.8338077664
+                                                33:        0.8609431386
+                                                34:        0.8862006068
+                                                35:        0.9094079137
+                                                36:        0.9303930998
+                                                37:        0.9489839077
+                                                38:        0.9650081992
+                                                39:        0.9782941937
+                                                40:        0.9886693358
+                                                41:        0.9959621429
+                                                42:                 1.0
+-----------------------------------------------------------------------
+
+######################
+### LIST OF FIELDS ###
+######################
+Number: 1
+Field name          
+-----------------------------------------------------------------------
+CLSTEMPERATURE      
+-----------------------------------------------------------------------
