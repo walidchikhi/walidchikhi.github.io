@@ -1,0 +1,46 @@
+name: "Create a simple Rmarkdown website"
+output:
+  html_document:
+    theme: flatly
+    highlight: textmate
+    toc: true
+    toc_depth: 2
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+favicon: favicon.ico
+extra_css: ["styles.css"]
+
+navbar:
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Overview PNT"
+      menu:
+        - text: "Organigramme PNT"
+          href: organigrame.html
+    - text: "Getting Started"
+      menu: 
+        - text: "Modéles de PNT Météo-Algérie"
+          href: build.html
+        - text: "Tools Used"
+          href: create_yml.html
+        - text: "Change the Theme"
+          href: theme.html
+    - text: "Controle des modéles "
+      menu:
+        - text: "Harp"
+          href: harp.html
+        - text: "Include Images"
+          href: images.html
+        - text: "Embed a webpage"
+          href: embed.html
+        - text: "Embed an infographic"
+          href: info.html 
+    - text: "Publish and Update"      
+      menu: 
+        - text: "Publishing"
+          href: publishing.html
+        - text: "Updating"
+          href: updating.html
+output_dir: "."

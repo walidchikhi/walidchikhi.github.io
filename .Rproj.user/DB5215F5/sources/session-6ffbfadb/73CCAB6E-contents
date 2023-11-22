@@ -1,0 +1,33 @@
+---
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Organigramme PNT
+
+la PNT Algérie est le service concernée des taches suivantes : -
+Développement et maintiens des modéles de Prévision numériques de temps
+Atmosphériques et marines - Assimilation de données Météorologiques -
+Controles des modéles de PNT - Developpement d'application end-users
+pour l'exploitation.
+
+L'équipe de la PNT en Algérie se divise en 2 grandes cellules :
+
+## ***cellule Atmosphérique:***
+
+c'est la cellule qui prend en charge les développemnt du modéle atm
+AROME - ALADIN, regroupe les branches suivantes :
+
+\- Physique + Diagnostique
+
+\- Modélisation de Surface
+
+\- Systéme - Rayonnement
+
+\- Assimilation de données
+
+## ***cellule Marine:***
+
+prend en charge les modéles marins à citer WW3 :

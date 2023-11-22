@@ -1,0 +1,53 @@
+---
+title: "Wiki-PNT"
+output: html_document
+---
+
+```{=html}
+<style type="text/css">
+.title {
+  display: none;
+}
+
+#getting-started img {
+  margin-right: 10px;
+}
+
+</style>
+```
+<div class="row" style="padding-top: 30px;">
+
+<div class="col-sm-6">
+
+![Logo Météo Algérie](images/logos_meteo_algérie.jpg)
+
+# **Premier Wiki PNT**
+
+Bienvenue dans un univers où la création d'un site Web avec Rmarkdown et son hébergement sur les pages GitHub devient une réalité fascinante. Ce n'est qu'un début, mais un début prometteur...
+
+# Wiki MÉTÉO-ALGÉRIE PNT
+
+Découvrez le potentiel infini de créer un site Web avec Rmarkdown et de l'héberger sur les pages GitHub. Un premier pas modeste, mais un pas vers l'avenir...
+
+Une tentative audacieuse de créer une page wiki.
+
+-   Premier essai Juin 2022
+-   Deuxième essai Novembre 2023, plus d'un an plus tard...
+
+# Tâches Principales de la PNT
+
+Tout ce que nous accomplissons est là.
+
+# Guide du débutant :
+
+Le paradis des nouvelles recrues , un lieu où vous trouverez tout le nécessaire pour intégrer rapidement notre groupe.
+
+# Documentation
+
+Vous trouverez ici des documents importants.
+
+# Outils
+
+Une explication des outils que nous utilisons pour survivre :)
+
+## toute aide sera appréciée
