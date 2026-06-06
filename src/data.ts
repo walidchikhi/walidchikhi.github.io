@@ -208,6 +208,19 @@ export const projects: Project[] = [
     description: "Implémentation du format Zarr comme couche de stockage principal pour les sorties de modèles NWP, optimisé pour les applications de Machine Learning sur des données atmosphériques multidimensionnelles.",
     tags: ["Zarr", "Xarray", "Machine Learning", "HPC"],
   },
+  {
+    id: "11",
+    title: "Fog & Visibility Forecasting using LIMA",
+    category: "Numerical Weather Prediction · Research",
+    description: "Implémentation et évaluation d'un diagnostic de visibilité utilisant le schéma microphysique LIMA (Liquid Ice Multiple Aerosols) au sein du modèle AROME. L'étude se concentre sur l'amélioration de la prévision du brouillard sur le nord de l'Algérie.",
+    tags: ["NWP", "LIMA", "Microphysics", "Fog", "AROME"],
+    image: "/docs/visibility/Poster_visibility-LIMA-1.png",
+    links: [
+      { label: "Article Newsletter", url: "/docs/visibility/Article_NL01_Visibility_diag_Walid_2021.pdf" },
+      { label: "Présentation PDF", url: "/docs/visibility/visibility_with_lima_chikhiw_01.pdf" },
+      { label: "Poster PDF", url: "/docs/visibility/Poster_visibility-LIMA.pdf" },
+    ],
+  },
 ];
 
 export const reports: Report[] = [
