@@ -61,7 +61,7 @@ export const projects: Project[] = [
     category: "Artificial Intelligence",
     description: "Development of end-to-end applications using cutting-edge Agentic AI tools (Antigravity, Gemini, Claude). Leveraging Vibe Coding to rapidly prototype, iterate, and deploy complex software architectures, turning deep domain expertise into scalable tech products.",
     tags: ["GenAI", "Vibe Coding", "Agentic AI", "Antigravity"],
-    image: "/vibe-coding-demo.png" // User can replace this with their actual image
+    image: "/docs/capture_pntview.mp4"
   },
   {
     id: "2",
@@ -69,14 +69,14 @@ export const projects: Project[] = [
     category: "Documentation",
     description: "Implementation of Documentation-as-Code paradigms using Mkdocs and Material for Mkdocs. Generating high-quality, easily maintainable, and searchable documentation for complex scientific software and Python packages.",
     tags: ["Mkdocs", "Doc-as-Code", "Markdown"],
-    image: "/mkdocs-demo.png" // User can replace this with their actual image
+    image: "/docs/interface-documentation-mkdocs.png"
   },
   {
     id: "3",
-    title: "falfilfa4py: FA/LFI/LFA Python Interface",
+    title: "FALFILFA & falfilfa4py: Pip Installable Formats",
     category: "Software Engineering",
-    description: "Created falfilfa4py package: Python interface for Météo-France's internal FA/LFI/LFA formats. Restructured the EPyGrAM python package architecture using src-layout organization for PyPI distribution.",
-    tags: ["Python", "PyPI", "Docker", "CMake"],
+    description: "Externalized the internal ACCORD FALFILFA package from the IAL monolithic code, making it buildable with CMake. Created falfilfa4py: a Pip-installable Python interface for FA/LFI/LFA formats. Also packaged EPyGrAM for PyPI distribution.",
+    tags: ["Python", "PyPI", "CMake", "C++", "Fortran"],
     pypiUrl: "https://pypi.org/project/falfilfa4py/"
   },
   {

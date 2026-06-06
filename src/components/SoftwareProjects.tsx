@@ -17,31 +17,31 @@ export default function SoftwareProjects() {
       ]
     },
     {
-      title: "EPyGrAM",
+      title: "EPyGrAM (Packaging)",
       version: "v1.5.1",
       headerBg: "bg-nordic-terra",
       badge: "PyPI",
       badgeColor: "bg-emerald-100 text-emerald-700",
-      desc: "Enhanced Python for Graphics and Analysis of Meteorological fields",
-      tags: "Python · setuptools · src layout · Cartopy · eccodes",
+      desc: "Mise en package PIP de la bibliothèque EPyGrAM (Enhanced Python for Graphics and Analysis)",
+      tags: "Python · setuptools · src layout",
       features: [
         "PyPI distribution",
         "src layout architecture",
-        "falfilfa4py integration"
+        "Pip installable"
       ]
     },
     {
-      title: "LFIFA Library",
-      version: "Dev",
+      title: "FALFILFA",
+      version: "Internal",
       headerBg: "bg-zinc-600",
-      badge: "GitHub",
-      badgeColor: "bg-emerald-100 text-emerald-700",
-      desc: "Externalisation formats FA-LFI-LFA depuis code IAL",
-      tags: "Fortran · CMake · ecbuild · GMKPACK · Intel/GNU",
+      badge: "ACCORD",
+      badgeColor: "bg-blue-100 text-blue-700",
+      desc: "Externalisation du package FALFILFA de IAL (rendu installable avec CMake)",
+      tags: "Fortran · CMake · ACCORD Consortium",
       features: [
-        "CMake/ecbuild build",
-        "Tests multi-compilateurs",
-        "Intégration CY50T1"
+        "CMake build",
+        "Indépendant de IAL",
+        "Utilisé par falfilfa4py"
       ]
     },
     {

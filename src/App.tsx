@@ -6,7 +6,6 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Expertise from "./components/Expertise";
-import Publications from "./components/Publications";
 import SoftwareProjects from "./components/SoftwareProjects";
 import ScientificStays from "./components/ScientificStays";
 import About from "./components/About";
@@ -25,7 +24,6 @@ export default function App() {
         <Expertise />
         <Projects />
         <SoftwareProjects />
-        <Publications />
         <ScientificStays />
       </main>
       <Footer />
