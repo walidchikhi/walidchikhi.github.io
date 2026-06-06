@@ -109,7 +109,7 @@ export const projects: Project[] = [
     category: "Vibe Coding · Contribution IA",
     description: "Supervision et contribution au développement d'une application modulaire de visualisation des sorties de modèles PNT et satellites MTG. Architecture en couches avec superposition de champs météorologiques, multi-modèle et multi-domaine. Application opérationnelle à Météo-Algérie. Vibe Coding utilisé pour accélérer le développement avec des agents IA.",
     tags: ["Vibe Coding", "Python", "Opérationnel", "NWP", "MTG"],
-    video: "/docs/pntview/capture_pntview.mp4",
+    image: "/docs/pntview/pntview_demo.gif",
   },
   {
     id: "2",
