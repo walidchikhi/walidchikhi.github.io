@@ -57,45 +57,56 @@ export const education: Education[] = [
 export const projects: Project[] = [
   {
     id: "1",
-    title: "Operational Models Verification Framework",
-    category: "Data Infrastructure",
-    description: "Automated computation of verification metrics using HARP package. Real-time data processing handling 10GB+ daily volume, with an interactive web interface for realtime score visualization. Includes TAF visualisation module.",
-    tags: ["HARP", "Web Interface", "Data Processing", "TAF"],
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=800&q=80" // Weather map
+    title: "Vibe Coding & AI-Driven Full Stack Apps",
+    category: "Artificial Intelligence",
+    description: "Development of end-to-end applications using cutting-edge Agentic AI tools (Antigravity, Gemini, Claude). Leveraging Vibe Coding to rapidly prototype, iterate, and deploy complex software architectures, turning deep domain expertise into scalable tech products.",
+    tags: ["GenAI", "Vibe Coding", "Agentic AI", "Antigravity"],
+    image: "/vibe-coding-demo.png" // User can replace this with their actual image
   },
   {
     id: "2",
-    title: "Meteorological Fire Weather Risk System",
-    category: "Applied Science",
-    description: "Implemented HDW & Revised IFM fire danger index. Developed Firedz Python package for index calculation and automated daily map generation. Supervised interactive visualisation web app.",
-    tags: ["Python", "Risk Management", "Visualization"],
-    image: "https://images.unsplash.com/photo-1599316518118-c2afb77dbd9e?auto=format&fit=crop&w=800&q=80" // Fire/Forest
+    title: "Modern Technical Documentation (Mkdocs)",
+    category: "Documentation",
+    description: "Implementation of Documentation-as-Code paradigms using Mkdocs and Material for Mkdocs. Generating high-quality, easily maintainable, and searchable documentation for complex scientific software and Python packages.",
+    tags: ["Mkdocs", "Doc-as-Code", "Markdown"],
+    image: "/mkdocs-demo.png" // User can replace this with their actual image
   },
   {
     id: "3",
-    title: "Satellite Products: Convective Rainfall Rate",
-    category: "Remote Sensing",
-    description: "Modelisation of Convective Rainfall Rate (CRR) estimator from satellite imagery (MSG/SEVIRI). Operational integration for nowcasting applications as an interactive WebApp.",
-    tags: ["MSG/SEVIRI", "Nowcasting", "Web App"],
-    image: "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?auto=format&fit=crop&w=800&q=80" // Satellite / Earth
+    title: "falfilfa4py: FA/LFI/LFA Python Interface",
+    category: "Software Engineering",
+    description: "Created falfilfa4py package: Python interface for Météo-France's internal FA/LFI/LFA formats. Restructured the EPyGrAM python package architecture using src-layout organization for PyPI distribution.",
+    tags: ["Python", "PyPI", "Docker", "CMake"],
+    pypiUrl: "https://pypi.org/project/falfilfa4py/"
   },
   {
     id: "4",
-    title: "Towards a more portable EPyGrAM",
-    category: "Software Engineering",
-    description: "Restructured the EPyGrAM python package architecture using src-layout organization for PyPI distribution. Created falfilfa4py package: Python interface for FA/LFI/LFA formats.",
-    tags: ["Python", "PyPI", "Docker", "CMake"]
+    title: "Meteorological Fire Weather Risk System (FireDz)",
+    category: "Applied Science",
+    description: "Implemented HDW & Revised IFM fire danger index. Developed Firedz Python package for index calculation and automated daily map generation. Supervised interactive visualisation web app.",
+    tags: ["Python", "Risk Management", "Visualization"],
+    image: "https://images.unsplash.com/photo-1599316518118-c2afb77dbd9e?auto=format&fit=crop&w=800&q=80", // Fire/Forest
+    githubUrl: "https://github.com/walidchikhi/firedz"
   },
   {
     id: "5",
-    title: "Operational Systems Engineering (PyTAPS & Firedz)",
+    title: "PyTAPs: Production Automation Framework",
     category: "Automation",
-    description: "Development of production-ready Python packages: PyTAPS for Meteo-Algeria production automation and Firedz for fire weather indexes treatment. Modular and pip-installable.",
-    tags: ["Python", "Automation", "Pip"],
-    image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=800&q=80" // Code / Tech
+    description: "Development of a production-ready Python package (PyTAPs) for Meteo-Algeria's operational suite automation. Highly modular architecture ensuring 24/7 reliability for critical NWP models.",
+    tags: ["Python", "Automation", "Pip", "NWP"],
+    image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=800&q=80", // Code / Tech
+    githubUrl: "https://github.com/NWP-Dz/PyTAP" // Link might be private, but it shows it's a real repo
   },
   {
     id: "6",
+    title: "Operational Models Verification Framework",
+    category: "Data Infrastructure",
+    description: "Automated computation of verification metrics using HARP package. Real-time data processing handling 10GB+ daily volume, with an interactive web interface for realtime score visualization.",
+    tags: ["HARP", "Web Interface", "Data Processing"],
+    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=800&q=80" // Weather map
+  },
+  {
+    id: "7",
     title: "Zarr Format Data Infrastructure",
     category: "Architecture",
     description: "Implementation of Zarr format as a base database architecture for model outputs, designed for machine learning applications and multidimensional atmospheric data.",

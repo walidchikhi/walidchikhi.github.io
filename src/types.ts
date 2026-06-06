@@ -25,6 +25,8 @@ export interface Project {
   image?: string;
   hasCaseStudy?: boolean;
   link?: string;
+  githubUrl?: string;
+  pypiUrl?: string;
 }
 
 export interface Report {

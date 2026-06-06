@@ -11,6 +11,7 @@ import SoftwareProjects from "./components/SoftwareProjects";
 import ScientificStays from "./components/ScientificStays";
 import About from "./components/About";
 import Experience from "./components/Experience";
+import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -22,8 +23,9 @@ export default function App() {
         <About />
         <Experience />
         <Expertise />
-        <Publications />
+        <Projects />
         <SoftwareProjects />
+        <Publications />
         <ScientificStays />
       </main>
       <Footer />

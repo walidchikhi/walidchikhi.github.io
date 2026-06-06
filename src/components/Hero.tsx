@@ -5,20 +5,19 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="heading-font text-5xl md:text-6xl font-bold text-nordic-text leading-tight mb-6 tracking-tight">
-              Numerical Weather <br />
-              Prediction & <br />
-              <span className="text-nordic-sage">Scientific Computing</span>
+              NWP, AI & <br />
+              <span className="text-nordic-sage">Software Engineering</span>
             </h1>
             <p className="text-xl text-zinc-600 mb-2 font-light">
-              Head of NWP Department at Meteo-Algeria · ACCORD Consortium
+              Head of NWP Department · AI Agentic Developer
             </p>
             <p className="text-sm font-medium text-zinc-400 mb-10 tracking-wide">
-              Hydrological Modeling · Microphysics · HPC · Open Source
+              Numerical Weather Prediction · Vibe Coding · HPC · Open Source
             </p>
             
             <div className="flex flex-wrap gap-3 mb-8">
               <span className="px-4 py-1.5 bg-nordic-sage text-white text-sm font-semibold rounded-full">
-                ACCORD Member
+                GenAI Apps
               </span>
               <span className="px-4 py-1.5 bg-nordic-terra text-white text-sm font-semibold rounded-full">
                 PyPI Publisher
@@ -62,6 +61,11 @@ export default function Hero() {
               <div className="text-xs text-zinc-400 mt-1">NWP Department</div>
             </div>
             <div>
+              <div className="text-4xl font-bold text-nordic-sage mb-1">5+</div>
+              <div className="text-sm font-bold text-nordic-text">Full Apps Generated</div>
+              <div className="text-xs text-zinc-400 mt-1">Via Vibe Coding & AI</div>
+            </div>
+            <div>
               <div className="text-4xl font-bold text-nordic-sage mb-1">4</div>
               <div className="text-sm font-bold text-nordic-text">Published Projects</div>
               <div className="text-xs text-zinc-400 mt-1">On PyPI/GitHub</div>
@@ -75,11 +79,6 @@ export default function Hero() {
               <div className="text-4xl font-bold text-nordic-sage mb-1">2</div>
               <div className="text-sm font-bold text-nordic-text">Scientific Stays</div>
               <div className="text-xs text-zinc-400 mt-1">Météo-France CNRM</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-nordic-sage mb-1">CY50</div>
-              <div className="text-sm font-bold text-nordic-text">Latest Cycle</div>
-              <div className="text-xs text-zinc-400 mt-1">IAL Compilation</div>
             </div>
           </div>
         </div>

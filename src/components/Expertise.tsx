@@ -8,14 +8,24 @@ export default function Expertise() {
       desc: "Configuration opérationnelle, cycles CY43...",
     },
     {
-      title: "Microphysics",
-      tags: "LIMA · ICE3 · Visibility Diagnostics",
-      desc: "Prévision brouillard, schémas double moment, diagnostics acvisih",
+      title: "AI & Agentic Coding",
+      tags: "GENAI · VIBE CODING · CLAUDE · GEMINI",
+      desc: "Génération d'applications de bout en bout avec l'IA.",
     },
     {
       title: "Software Engineering",
       tags: "PYTHON · FORTRAN · CMAKE",
       desc: "Architecture MVC, PIP packages, C++ interop...",
+    },
+    {
+      title: "Doc As Code",
+      tags: "MKDOCS · MARKDOWN · MATERIAL",
+      desc: "Documentation technique, scientifique et APIs.",
+    },
+    {
+      title: "Microphysics",
+      tags: "LIMA · ICE3 · VISIBILITY",
+      desc: "Prévision brouillard, diagnostics avancés (acvisih).",
     },
     {
       title: "HPC & Data",
@@ -31,7 +41,7 @@ export default function Expertise() {
           Domaines d'Expertise
         </h2>
         
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((cat, i) => (
             <div key={i} className="bg-white rounded-2xl p-8 border border-zinc-100 shadow-sm hover:shadow-md transition-shadow">
                <div className="flex items-center gap-4 mb-4">
