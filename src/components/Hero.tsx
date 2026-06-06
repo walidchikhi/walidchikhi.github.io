@@ -14,7 +14,7 @@ export default function Hero() {
             <p className="text-sm font-medium text-zinc-400 mb-10 tracking-wide">
               Numerical Weather Prediction · Vibe Coding · HPC · Open Source
             </p>
-            
+
             <div className="flex flex-wrap gap-3 mb-8">
               <span className="px-4 py-1.5 bg-nordic-sage text-white text-sm font-semibold rounded-full">
                 GenAI Apps
@@ -37,20 +37,19 @@ export default function Hero() {
               </a>
             </div>
           </div>
-          
+
           <div className="hidden lg:flex justify-end relative">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-zinc-100 flex flex-col items-center">
-                <div className="grid grid-cols-7 gap-3 mb-6 opacity-70">
-                   {Array.from({length: 35}).map((_, i) => (
-                      <div key={i} className={`w-6 h-6 rounded-full ${[2,7,12,17,22,29,34].includes(i) ? 'bg-nordic-sage' : [4,9,14].includes(i) ? 'bg-nordic-terra' : [0,5,10,13,20,30].includes(i) ? 'bg-orange-200' : [1,8,15,25].includes(i) ? 'bg-zinc-300' : 'bg-blue-200'}`}></div>
-                   ))}
-                </div>
-                <span className="text-xs font-medium text-zinc-500">AROME 1.3km · Visibility Forecast</span>
+            <div className="bg-white p-4 rounded-2xl shadow-sm border border-zinc-100 flex flex-col items-center">
+              <img 
+                src="/Walid_PHOTO.PNG" 
+                alt="Walid Chikhi" 
+                className="w-64 h-auto rounded-xl object-cover"
+              />
             </div>
           </div>
         </div>
       </div>
-      
+
       {/* Stats bar */}
       <div className="bg-white border-t border-zinc-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -61,18 +60,23 @@ export default function Hero() {
               <div className="text-xs text-zinc-400 mt-1">NWP Department</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-nordic-sage mb-1">5+</div>
-              <div className="text-sm font-bold text-nordic-text">Full Apps Generated</div>
-              <div className="text-xs text-zinc-400 mt-1">Via Vibe Coding & AI</div>
+              <div className="text-4xl font-bold text-nordic-sage mb-1">2+</div>
+              <div className="text-sm font-bold text-nordic-text">Apps Contributed</div>
+              <div className="text-xs text-zinc-400 mt-1">Coding & Vibe Coding </div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-nordic-sage mb-1">4</div>
+              <div className="text-4xl font-bold text-nordic-sage mb-1">3+</div>
+              <div className="text-sm font-bold text-nordic-text">Full Apps Developped</div>
+              <div className="text-xs text-zinc-400 mt-1">Coding & Vibe Coding </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-nordic-sage mb-1">2+</div>
               <div className="text-sm font-bold text-nordic-text">Published Projects</div>
               <div className="text-xs text-zinc-400 mt-1">On PyPI/GitHub</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-nordic-sage mb-1">3</div>
-              <div className="text-sm font-bold text-nordic-text">Research Papers</div>
+              <div className="text-sm font-bold text-nordic-text">Research Projects</div>
               <div className="text-xs text-zinc-400 mt-1">NWP & Hydrology</div>
             </div>
             <div>
