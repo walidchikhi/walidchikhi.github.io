@@ -3,6 +3,22 @@ import { Award } from "lucide-react";
 
 const trainings = [
   {
+    year: "2025",
+    title: "WISER MENA SeaSCAPE Seasonal Prediction Training",
+    org: "WMO RTC Egypte & UK Met Office",
+    type: "Formation",
+    desc: "Certificate in Seasonal forecasting fundamentals, production and verification.",
+    tags: ["Seasonal Prediction", "WMO", "UK Met Office"],
+  },
+  {
+    year: "2025",
+    title: "Executive Development Program",
+    org: "Higher Institute of Management and Planning (ISGP)",
+    type: "Certificat",
+    desc: "Certificat of Professional Development for Corporate Executives.",
+    tags: ["Management", "Leadership"],
+  },
+  {
     year: "2023",
     title: "Machine Learning for Weather and Climate",
     org: "ECMWF / WMO Online",
@@ -12,27 +28,19 @@ const trainings = [
   },
   {
     year: "2022",
-    title: "Numerical Weather Prediction — Advanced Training",
-    org: "WMO Regional Training Centre",
+    title: "Modélisation Hydrologique HYPE",
+    org: "SMHI (Swedish Meteorological and Hydrological Institute)",
     type: "Formation",
-    desc: "Advanced techniques in NWP modeling, data assimilation, and ensemble forecasting for operational meteorology.",
-    tags: ["NWP", "Data Assimilation", "Ensemble"],
+    desc: "Training on the implementation and configuration of the HYPE hydrological model for flood forecasting and water resource management.",
+    tags: ["HYPE", "Hydrology", "SMHI"],
   },
   {
     year: "2021",
-    title: "HARP — Harmonised Analysis and Reporting for Predictions",
-    org: "ACCORD Consortium",
-    type: "Atelier",
-    desc: "Training on the HARP R-based verification package for meteorological models scores computation and interactive visualization.",
-    tags: ["HARP", "R", "Verification", "ACCORD"],
-  },
-  {
-    year: "2021",
-    title: "EPyGrAM — Advanced Usage & Contribution",
-    org: "Météo-France / CNRM",
-    type: "Formation",
-    desc: "Advanced training on the EPyGrAM Python library for reading, processing, and plotting meteorological fields from GRIB and FA formats.",
-    tags: ["EPyGrAM", "Python", "GRIB", "FA"],
+    title: "Numerical Weather Prediction Phase I",
+    org: "WMO RTC, Cairo, Egypt",
+    type: "Certificat",
+    desc: "Certificate in operational NWP systems, data assimilation fundamentals, and model configuration.",
+    tags: ["NWP", "Data Assimilation", "WMO"],
   },
 ];
 

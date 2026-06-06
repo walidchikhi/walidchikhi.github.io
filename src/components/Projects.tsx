@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { projects } from "../data";
 import {
@@ -30,16 +31,21 @@ function Lightbox({
       if (e.key === "ArrowRight") next();
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    // Prevent scrolling behind
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = 'unset';
+    };
   }, [onClose, prev, next]);
 
-  return (
+  return createPortal(
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm"
         onClick={onClose}
       >
         {/* Close button */}
@@ -97,7 +103,8 @@ function Lightbox({
           </>
         )}
       </motion.div>
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }
 
