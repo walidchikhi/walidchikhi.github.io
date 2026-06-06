@@ -168,7 +168,10 @@ export const projects: Project[] = [
       "/docs/hype/Pics/Land_Use_GlobCover_2.png",
       "/docs/hype/Pics/soil_Fig.png",
     ],
-    link: "/docs/hype/Article_CHIKHI_HYPE_JAMA06_Mar2023_corr.pdf",
+    links: [
+      { label: "Article JAMA PDF", url: "/docs/hype/Article_CHIKHI_HYPE_JAMA06_Mar2023_corr.pdf" },
+      { label: "Séminaire PDF", url: "/docs/hype/Séminaire.pdf" },
+    ],
   },
   {
     id: "7",
@@ -185,6 +188,10 @@ export const projects: Project[] = [
     description: "Externalisation du package interne FALFILFA du code monolithique IAL (IFS/ARPEGE/LAM) du consortium ACCORD. Création d'une bibliothèque autonome compilable via CMake. Développement de falfilfa4py, le binding Python (pip installable) pour les formats FA/LFI/LFA de Météo-France, intégré dans EPyGrAM. Packaging PyPI d'EPyGrAM (src-layout).",
     tags: ["Fortran", "CMake", "Python", "PyPI", "ACCORD"],
     pypiUrl: "https://pypi.org/project/falfilfa4py/",
+    links: [
+      { label: "Rapport FALFILFA (Fév. 2023)", url: "/docs/falfilfa/stay_report_CHIKHI_Feb2023.pdf" },
+      { label: "Rapport EPyGrAM + falfilfa4py", url: "/docs/falfilfa/CHIKHI_stay_report_28May_07Jun_corr.pdf" },
+    ],
   },
   {
     id: "9",

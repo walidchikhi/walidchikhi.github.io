@@ -28,6 +28,7 @@ export interface Project {
   codeSnippet?: string; // python / bash code to display
   hasCaseStudy?: boolean;
   link?: string;
+  links?: { label: string; url: string }[];
   githubUrl?: string;
   pypiUrl?: string;
 }
