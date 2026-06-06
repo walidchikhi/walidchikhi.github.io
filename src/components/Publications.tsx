@@ -40,10 +40,10 @@ export default function Publications() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-400 font-medium">
-                  <span className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Lire l'article PDF</span>
-                  <span className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Voir les cartes SLC</span>
-                  <span className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Voir le poster</span>
-                  <span className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Présentation mémoire</span>
+                  <a href="/docs/Article_CHIKHI_HYPE_JAMA06_Mar2023_corr.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Lire l'article PDF</a>
+                  <a href="/docs/Séminaire.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Voir les cartes SLC</a>
+                  <a href="/docs/Poster_CHIKHI_séminaire.pptx" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Voir le poster</a>
+                  <a href="/docs/Mémoire_HYPE.pptx" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Présentation mémoire</a>
                 </div>
               </div>
 
@@ -94,10 +94,10 @@ export default function Publications() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-400 font-medium">
-                  <span className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Lire l'article</span>
-                  <span className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Cartes visibilité</span>
-                  <span className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Tables contingence</span>
-                  <span className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Animations</span>
+                  <a href="/docs/Article_NL01_Visibility_diag_Walid_2021.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Lire l'article</a>
+                  <a href="/docs/Capture d’écran du 2026-05-26 08-20-24.png" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Cartes visibilité</a>
+                  <a href="/docs/Capture d’écran du 2026-05-26 08-20-48.png" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Tables contingence</a>
+                  <a href="/docs/Capture d’écran du 2026-05-26 08-21-37.png" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Animations</a>
                 </div>
               </div>
 
@@ -126,10 +126,10 @@ export default function Publications() {
                 <p className="text-lg font-medium text-nordic-text mb-2">AROME CY48T1 · Schéma double moment LIMA · Initialisation aérosols CAMS · Brouillard chaud</p>
                 <p className="text-sm text-zinc-500 mb-6">3 configurations: AROME_ICE3 | AROME_LIMA | AROME_INIT (CAMS + nouvelle formule)</p>
                 <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-400 font-medium">
-                  <span className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Rapport technique</span>
-                  <span className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Comparaisons visibilités</span>
-                  <span className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> RMSE T2m/RH2m</span>
-                  <span className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Cas 1-3 Jan 2022</span>
+                  <a href="/docs/visibility_with_lima_chikhiw_01.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Rapport technique</a>
+                  <a href="/docs/Capture d’écran du 2026-05-26 08-58-16.png" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Comparaisons visibilités</a>
+                  <a href="/docs/Capture d’écran du 2026-05-26 08-21-57.png" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> RMSE T2m/RH2m</a>
+                  <a href="/docs/Capture d’écran du 2026-05-26 09-03-15.png" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-nordic-text cursor-pointer transition-colors"><FileText size={16}/> Cas 1-3 Jan 2022</a>
                 </div>
             </div>
           </div>

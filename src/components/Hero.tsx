@@ -16,7 +16,7 @@ export default function Hero() {
               Hydrological Modeling · Microphysics · HPC · Open Source
             </p>
             
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 mb-8">
               <span className="px-4 py-1.5 bg-nordic-sage text-white text-sm font-semibold rounded-full">
                 ACCORD Member
               </span>
@@ -26,6 +26,16 @@ export default function Hero() {
               <span className="px-4 py-1.5 bg-zinc-500 text-white text-sm font-semibold rounded-full">
                 WMO Standards
               </span>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <a href="/docs/CV_Tech_En_Walid.pdf" target="_blank" rel="noopener noreferrer" className="bg-nordic-text text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-zinc-800 transition-colors flex items-center gap-2 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Download CV
+              </a>
+              <a href="#contact" className="text-nordic-text font-semibold text-sm hover:text-nordic-sage transition-colors">
+                Get in touch
+              </a>
             </div>
           </div>
           

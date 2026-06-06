@@ -6,10 +6,11 @@ export default function Header() {
 
   const links = [
     { name: "Accueil", href: "#home", active: true },
+    { name: "À Propos", href: "#about" },
+    { name: "Parcours", href: "#experience" },
     { name: "Expertise", href: "#expertise" },
     { name: "Publications", href: "#publications" },
     { name: "Projets", href: "#projects" },
-    { name: "Systèmes", href: "#systems" },
     { name: "Contact", href: "#contact" },
   ];
 

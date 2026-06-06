@@ -21,9 +21,9 @@ export default function ScientificStays() {
                  </div>
               </div>
               <div className="flex-shrink-0">
-                 <button className="bg-white border border-nordic-terra text-nordic-terra px-5 py-2.5 rounded-lg text-sm font-bold tracking-wide flex items-center gap-2 hover:bg-nordic-terra hover:text-white transition-colors w-full sm:w-auto justify-center shadow-sm">
+                 <a href="/docs/CHIKHI_stay_report_28May_07Jun_corr.pdf" target="_blank" rel="noopener noreferrer" className="bg-white border border-nordic-terra text-nordic-terra px-5 py-2.5 rounded-lg text-sm font-bold tracking-wide flex items-center gap-2 hover:bg-nordic-terra hover:text-white transition-colors w-full sm:w-auto justify-center shadow-sm">
                     <FileText size={18}/> Rapport PDF
-                 </button>
+                 </a>
               </div>
            </div>
         </div>

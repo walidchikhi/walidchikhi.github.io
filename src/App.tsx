@@ -9,6 +9,8 @@ import Expertise from "./components/Expertise";
 import Publications from "./components/Publications";
 import SoftwareProjects from "./components/SoftwareProjects";
 import ScientificStays from "./components/ScientificStays";
+import About from "./components/About";
+import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -17,6 +19,8 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <About />
+        <Experience />
         <Expertise />
         <Publications />
         <SoftwareProjects />
