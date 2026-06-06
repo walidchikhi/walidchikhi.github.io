@@ -54,64 +54,153 @@ export const education: Education[] = [
   }
 ];
 
+const FIREDZ_CODE = `from modules import outer_functions
+import os
+from datetime import datetime, timedelta
+import pytaps
+import firedz
+import pandas as pd
+from functools import reduce
+
+# Load config
+config = pytaps.config.load_config(".config.json")
+host = config["host"]
+username = config["username"]
+remote_aladin = config["remote_aladin"]
+remote_arome = config["remote_arome"]
+
+# Read current and future dates
+year, month, day, next_year, next_month, next_day, \\
+  after_year, after_month, after_day = outer_functions.read_date()
+
+parameters = ['clst', 'clsu', 'clsv', 'clsh', 'accpluie']
+steps = range(0, 49, 3)
+models = ['arome', 'aladin']
+
+for model in models:
+    for step in steps:
+        data_list = [veg_arome.copy()]
+        for parameter in parameters:
+            filepath = f"output/{model}/{parameter}_{step:02d}"
+            par = firedz.utils.read_data(filepath, parameter)
+            data_list.append(firedz.utils.convert_data(par, parameter))
+
+        tab = reduce(lambda l, r: pd.merge(l, r, on=["longitude", "latitude"]), data_list)
+
+        # Calculate HDW index
+        tab["hdw"] = tab.apply(
+            lambda row: firedz.hdw.calculate_hdw(
+                row["clst"], row["clsh"], row["clsu"], row["clsv"]), axis=1)
+        tab['hdw_veg'] = tab['hdw'] * tab['veg_coef_binary']
+
+        # Plot fire danger map
+        firedz.fireplot.plot_map(
+            table=tab, index_name="hdw",
+            year=year, month=month, day=day, hour=step,
+            save=True, levels=label_num, colors=colors,
+            shp_file="templates/full_shapefile",
+            save_path=f"maps/{model}/{year}{month}{day}",
+            title=f"Carte HDW du {year}-{month}-{day} à {step:02d}h — {model.capitalize()}")`;
+
 export const projects: Project[] = [
   {
     id: "1",
-    title: "Vibe Coding & AI-Driven Full Stack Apps",
-    category: "Artificial Intelligence",
-    description: "Development of end-to-end applications using cutting-edge Agentic AI tools (Antigravity, Gemini, Claude). Leveraging Vibe Coding to rapidly prototype, iterate, and deploy complex software architectures, turning deep domain expertise into scalable tech products.",
-    tags: ["GenAI", "Vibe Coding", "Agentic AI", "Antigravity"],
-    image: "/docs/capture_pntview.mp4"
+    title: "PNTView — Application de Visualisation NWP/MTG",
+    category: "Vibe Coding · Contribution IA",
+    description: "Supervision et contribution au développement d'une application modulaire de visualisation des sorties de modèles PNT et satellites MTG. Architecture en couches avec superposition de champs météorologiques, multi-modèle et multi-domaine. Application opérationnelle à Météo-Algérie. Vibe Coding utilisé pour accélérer le développement avec des agents IA.",
+    tags: ["Vibe Coding", "Python", "Opérationnel", "NWP", "MTG"],
+    video: "/docs/pntview/capture_pntview.mp4",
   },
   {
     id: "2",
-    title: "Modern Technical Documentation (Mkdocs)",
-    category: "Documentation",
-    description: "Implementation of Documentation-as-Code paradigms using Mkdocs and Material for Mkdocs. Generating high-quality, easily maintainable, and searchable documentation for complex scientific software and Python packages.",
-    tags: ["Mkdocs", "Doc-as-Code", "Markdown"],
-    image: "/docs/interface-documentation-mkdocs.png"
+    title: "Portail de la DEM — Hub Opérationnel des Prévisionnistes",
+    category: "Application Web Opérationnelle",
+    description: "Conception et développement d'un portail centralisé regroupant l'ensemble des applications opérationnelles de la Direction des Études et de la Modélisation (DEM). Interface unifiée permettant aux prévisionnistes d'accéder à toutes les applications (contrôle des obs, visualisation, indices feu, etc.) depuis un seul endroit.",
+    tags: ["Web App", "React", "Opérationnel", "Météo-Algérie"],
+    image: "/docs/portail/portail_dem.png",
   },
   {
     id: "3",
-    title: "FALFILFA & falfilfa4py: Pip Installable Formats",
-    category: "Software Engineering",
-    description: "Externalized the internal ACCORD FALFILFA package from the IAL monolithic code, making it buildable with CMake. Created falfilfa4py: a Pip-installable Python interface for FA/LFI/LFA formats. Also packaged EPyGrAM for PyPI distribution.",
-    tags: ["Python", "PyPI", "CMake", "C++", "Fortran"],
-    pypiUrl: "https://pypi.org/project/falfilfa4py/"
+    title: "Interface de Contrôle des Observations & TAFs",
+    category: "Data Infrastructure · Web App",
+    description: "Développement d'une interface web interactive pour le contrôle qualité en temps réel des observations météorologiques (SYNOP, TEMP, METAR) et la visualisation des TAFs (Terminal Aerodrome Forecast). Inclut un module de monitoring des données en temps réel et un outil de contrôle des observations dynamiques.",
+    tags: ["HARP", "Web Interface", "Temps Réel", "TAF", "SYNOP"],
+    images: [
+      "/docs/controbs/interface-controle_monitoring-realtime.png",
+      "/docs/controbs/interface-controle_monitoring-observations.png",
+      "/docs/controbs/interface-controle-observations-dyn.png",
+      "/docs/controbs/interface-controle-observatoin-controle.png",
+      "/docs/controbs/interface-controle-TAFs.png",
+    ],
   },
   {
     id: "4",
-    title: "Meteorological Fire Weather Risk System (FireDz)",
-    category: "Applied Science",
-    description: "Implemented HDW & Revised IFM fire danger index. Developed Firedz Python package for index calculation and automated daily map generation. Supervised interactive visualisation web app.",
-    tags: ["Python", "Risk Management", "Visualization"],
-    image: "https://images.unsplash.com/photo-1599316518118-c2afb77dbd9e?auto=format&fit=crop&w=800&q=80", // Fire/Forest
-    githubUrl: "https://github.com/walidchikhi/firedz"
+    title: "Estimateur de Pluie Convective par Satellite (NWCSAF/CRR)",
+    category: "Remote Sensing · Nowcasting",
+    description: "Modélisation et intégration opérationnelle de l'estimateur de Taux de Pluie Convective (CRR) à partir des images satellites MSG/SEVIRI via le logiciel NWCSAF. Application web interactive pour la visualisation du nowcasting précipitations en temps réel.",
+    tags: ["MSG/SEVIRI", "NWCSAF", "Nowcasting", "Précipitations"],
+    image: "/docs/estimator/NWCSAF-estimation-pluie.png",
   },
   {
     id: "5",
-    title: "PyTAPs: Production Automation Framework",
-    category: "Automation",
-    description: "Development of a production-ready Python package (PyTAPs) for Meteo-Algeria's operational suite automation. Highly modular architecture ensuring 24/7 reliability for critical NWP models.",
-    tags: ["Python", "Automation", "Pip", "NWP"],
-    image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=800&q=80", // Code / Tech
-    githubUrl: "https://github.com/NWP-Dz/PyTAP" // Link might be private, but it shows it's a real repo
+    title: "Meteorological Fire Weather Risk System (FireDz)",
+    category: "Applied Science · Python Package",
+    description: "Implémentation des indices de danger feu HDW (Hot Dry Windy) et FWI (Canadian Fire Weather Index) adaptés à l'Algérie. Développement du package Python firedz (pip installable) pour le calcul automatisé des indices et la génération de cartes de vigilance quotidiennes basées sur les sorties d'AROME et ALADIN.",
+    tags: ["Python", "firedz", "HDW", "FWI", "AROME", "ALADIN"],
+    images: [
+      "/docs/firedz/hdw/HDW_index_20240813.gif",
+      "/docs/firedz/hdw/Max_HDW_20240813.png",
+      "/docs/firedz/hdw/HDW_20240813_12.png",
+      "/docs/firedz/hdw/HDW_20240813_15.png",
+    ],
+    codeSnippet: FIREDZ_CODE,
+    githubUrl: "https://github.com/walidchikhi/firedz",
   },
   {
     id: "6",
-    title: "Operational Models Verification Framework",
-    category: "Data Infrastructure",
-    description: "Automated computation of verification metrics using HARP package. Real-time data processing handling 10GB+ daily volume, with an interactive web interface for realtime score visualization.",
-    tags: ["HARP", "Web Interface", "Data Processing"],
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=800&q=80" // Weather map
+    title: "Modélisation Hydrologique HYPE — Prévision des Crues",
+    category: "Hydrologie · Thèse MSc",
+    description: "Implémentation du modèle hydrogéochimique semi-distribué HYPE sur le bassin versant du Côtier Algérois (11 sous-bassins, 4 wilayas). Validation sur la crue historique de Oued El-Harrach (mars 1985). NSE de 0.58 à la station de Mazafran. Données climatiques ERA5, données géographiques HydroSHEDs et GlobCover2009.",
+    tags: ["HYPE", "Hydrologie", "ERA5", "Python", "SMHI"],
+    images: [
+      "/docs/hype/Pics/Cours_d_eau1_2.png",
+      "/docs/hype/Pics/SLC.png",
+      "/docs/hype/Pics/Land_Use_GlobCover_2.png",
+      "/docs/hype/Pics/soil_Fig.png",
+    ],
+    link: "/docs/hype/Article_CHIKHI_HYPE_JAMA06_Mar2023_corr.pdf",
   },
   {
     id: "7",
+    title: "Modern Technical Documentation (Mkdocs)",
+    category: "Documentation as Code",
+    description: "Mise en place de la documentation-as-code avec Mkdocs et Material for Mkdocs pour des packages Python scientifiques complexes. Génération automatique de documentation navigable, versionnée et déployée sur GitHub Pages.",
+    tags: ["Mkdocs", "Material", "GitHub Pages", "Python"],
+    image: "/docs/mkdocs/interface-documentation-mkdocs.png",
+  },
+  {
+    id: "8",
+    title: "FALFILFA & falfilfa4py — Externalisation IAL",
+    category: "Software Engineering · ACCORD",
+    description: "Externalisation du package interne FALFILFA du code monolithique IAL (IFS/ARPEGE/LAM) du consortium ACCORD. Création d'une bibliothèque autonome compilable via CMake. Développement de falfilfa4py, le binding Python (pip installable) pour les formats FA/LFI/LFA de Météo-France, intégré dans EPyGrAM. Packaging PyPI d'EPyGrAM (src-layout).",
+    tags: ["Fortran", "CMake", "Python", "PyPI", "ACCORD"],
+    pypiUrl: "https://pypi.org/project/falfilfa4py/",
+  },
+  {
+    id: "9",
+    title: "PyTAPs — Automatisation de la Suite de Production",
+    category: "Automation · Python Package",
+    description: "Développement d'un framework Python modulaire (PyTAPs) pour l'automatisation complète de la suite de production opérationnelle de Météo-Algérie. Gestion des transferts de fichiers, du lancement des modèles et du post-traitement dans un seul package pip installable.",
+    tags: ["Python", "Automation", "Pip", "NWP"],
+    githubUrl: "https://github.com/NWP-Dz/PyTAP",
+  },
+  {
+    id: "10",
     title: "Zarr Format Data Infrastructure",
-    category: "Architecture",
-    description: "Implementation of Zarr format as a base database architecture for model outputs, designed for machine learning applications and multidimensional atmospheric data.",
-    tags: ["Zarr", "Xarray", "Machine Learning"]
-  }
+    category: "Architecture · Machine Learning",
+    description: "Implémentation du format Zarr comme couche de stockage principal pour les sorties de modèles NWP, optimisé pour les applications de Machine Learning sur des données atmosphériques multidimensionnelles.",
+    tags: ["Zarr", "Xarray", "Machine Learning", "HPC"],
+  },
 ];
 
 export const reports: Report[] = [

@@ -23,6 +23,9 @@ export interface Project {
   description: string;
   tags: string[];
   image?: string;
+  images?: string[];   // gallery of screenshots
+  video?: string;      // path to a local mp4
+  codeSnippet?: string; // python / bash code to display
   hasCaseStudy?: boolean;
   link?: string;
   githubUrl?: string;
