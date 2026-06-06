@@ -1,3 +1,5 @@
+import { Mail, Phone, Github, Linkedin, MapPin } from "lucide-react";
+
 export default function Hero() {
   return (
     <section id="home" className="bg-nordic-bg bg-dot-pattern">
@@ -38,13 +40,35 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="hidden lg:flex justify-end relative">
-            <div className="bg-white p-4 rounded-2xl shadow-sm border border-zinc-100 flex flex-col items-center">
+          <div className="hidden lg:flex flex-col items-end relative">
+            <div className="bg-white p-4 rounded-2xl shadow-sm border border-zinc-100 flex flex-col items-center w-72">
               <img 
                 src="/Walid_PHOTO.PNG" 
                 alt="Walid Chikhi" 
-                className="w-64 h-auto rounded-xl object-cover"
+                className="w-full h-auto rounded-xl object-cover mb-4"
               />
+              <div className="w-full flex flex-col gap-3">
+                <a href="mailto:waliidchikhi@gmail.com" className="flex items-center gap-3 text-sm text-zinc-600 hover:text-nordic-sage transition-colors p-2 rounded-lg hover:bg-zinc-50">
+                  <Mail size={16} className="text-nordic-terra" />
+                  <span>waliidchikhi@gmail.com</span>
+                </a>
+                <a href="tel:+213658196358" className="flex items-center gap-3 text-sm text-zinc-600 hover:text-nordic-sage transition-colors p-2 rounded-lg hover:bg-zinc-50">
+                  <Phone size={16} className="text-nordic-terra" />
+                  <span>+213 658 196 358</span>
+                </a>
+                <a href="https://github.com/walidchikhi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-zinc-600 hover:text-nordic-sage transition-colors p-2 rounded-lg hover:bg-zinc-50">
+                  <Github size={16} className="text-nordic-terra" />
+                  <span>github.com/walidchikhi</span>
+                </a>
+                <a href="https://linkedin.com/in/walid-chikhi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-zinc-600 hover:text-nordic-sage transition-colors p-2 rounded-lg hover:bg-zinc-50">
+                  <Linkedin size={16} className="text-nordic-terra" />
+                  <span>LinkedIn Profile</span>
+                </a>
+                <div className="flex items-center gap-3 text-sm text-zinc-600 p-2">
+                  <MapPin size={16} className="text-nordic-terra" />
+                  <span>Algiers, Algeria</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
